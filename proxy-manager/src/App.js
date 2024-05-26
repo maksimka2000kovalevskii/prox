@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Logs from "./pages/Logs";
@@ -10,11 +10,11 @@ const App = () => (
   <Router>
     <GlobalStyle />
     <Navbar />
-    <Switch>
-      <Route path="/" exact component={Dashboard} />
-      <Route path="/logs" component={Logs} />
-      <Route path="/settings" component={Settings} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/logs" element={<Logs />} />
+      <Route path="/settings" element={<Settings />} />
+    </Routes>
   </Router>
 );
 
